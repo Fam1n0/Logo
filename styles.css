@@ -1,0 +1,21 @@
+#gallery {
+    text-align: center;
+    margin: 20px;
+}
+
+.thumb {
+    width: 100px;
+    height: auto;
+    margin: 10px;
+}
+
+#canvasContainer {
+    display: flex;
+    justify-content: center;
+}
+
+#photoCanvas {
+    border: 2px solid black;
+    width: 500px; /* Adjust based on your requirement */
+    height: 500px; /* Adjust based on your requirement */
+}
