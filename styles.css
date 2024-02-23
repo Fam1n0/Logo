@@ -1,21 +1,20 @@
-#gallery {
+#thumbnails img {
+    width: 100px; /* Thumbnail size */
+    margin: 5px;
+    cursor: pointer;
+    transition: transform 0.2s; /* Animation on hover */
+}
+
+#thumbnails img:hover {
+    transform: scale(1.1); /* Slightly enlarge thumbnails on hover */
+}
+
+#displayArea {
     text-align: center;
-    margin: 20px;
+    margin-top: 20px;
 }
 
-.thumb {
-    width: 100px;
-    height: auto;
-    margin: 10px;
-}
-
-#canvasContainer {
-    display: flex;
-    justify-content: center;
-}
-
-#photoCanvas {
-    border: 2px solid black;
-    width: 500px; /* Adjust based on your requirement */
-    height: 500px; /* Adjust based on your requirement */
+#fullImage {
+    max-width: 90%; /* Adjust based on preference */
+    max-height: 600px; /* Adjust based on preference */
 }

@@ -1,22 +1,15 @@
-let canvas = document.getElementById('photoCanvas');
-let ctx = canvas.getContext('2d');
+document.addEventListener("DOMContentLoaded", function() {
+    const thumbnailsContainer = document.getElementById('thumbnails');
+    const fullImage = document.getElementById('fullImage');
 
-function showPhoto(photoId) {
-    let img = new Image();
-    img.onload = function() {
-        canvas.width = img.width;
-        canvas.height = img.height;
-        ctx.drawImage(img, 0, 0);
-    };
-    img.src = `images/${photoId}.jpg`;
-}
-
-// Handle color change
-document.getElementById('colorPicker').addEventListener('input', function(e) {
-    let color = e.target.value;
-    // This is a placeholder for the actual color changing logic
-    // It would typically involve redrawing the image with a filter or overlay
-    console.log(`Selected color: ${color}`);
-    // Example: Change canvas background (not the image itself)
-    canvas.style.backgroundColor = color;
+    for (let i = 1; i <= 10; i++) {
+        const imgElement = document.createElement('img');
+        imgElement.src = `images/${i}.jpg`; // Path to the thumbnail
+        imgElement.alt = `Photo ${i}`;
+        imgElement.onclick = function() {
+            fullImage.src = this.src; // Set the full image source to the clicked thumbnail's source
+            fullImage.style.display = 'block'; // Make the full image visible
+        };
+        thumbnailsContainer.appendChild(imgElement);
+    }
 });
